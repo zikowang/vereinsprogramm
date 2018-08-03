@@ -73,11 +73,7 @@ class UsersController extends AppController
         $departments = $this->Users->Departments->find('list', ['limit' => 200]);
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $this->set(compact('user', 'states', 'groups', 'addresses', 'departments', 'roles'));
-
-        $this->set([
-            'user' => $user,
-            '_serialize' => ['user', 'states', 'groups', 'addresses', 'departments', 'roles']
-        ]);
+        $this->set(['_serialize' => ['user', 'states', 'groups', 'addresses', 'departments', 'roles']]);
     }
 
     /**
@@ -106,11 +102,8 @@ class UsersController extends AppController
         $addresses = $this->Users->Addresses->find('list', ['limit' => 200]);
         $departments = $this->Users->Departments->find('list', ['limit' => 200]);
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
-
-        $this->set([
-            'user' => $user,
-            '_serialize' => ['user', 'states', 'groups', 'addresses', 'departments', 'roles']
-        ]);
+        $this->set(compact('user', 'states', 'groups', 'addresses', 'departments', 'roles'));
+        $this->set(['_serialize' => ['user', 'states', 'groups', 'addresses', 'departments', 'roles']]);
     }
 
     /**

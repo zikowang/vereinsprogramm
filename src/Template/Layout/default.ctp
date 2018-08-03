@@ -29,6 +29,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script('jquery.min.js') ?>
     <?= $this->Html->script('popper.min.js') ?>
     <?= $this->Html->script('bootstrap-material-design.min.js') ?>
+    <?= $this->Html->script('select2.min.js') ?>
     <?= $this->Html->script('index.js') ?>
 
     <?= $this->Html->css('style.css') ?>
@@ -38,9 +39,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <?= $this->Element('topnav') ?>
     <?= $this->Flash->render() ?>
-    <div class="container-fluid">
-        <?= $this->fetch('content') ?>
-    </div>
+    <?= $this->fetch('content') ?>
     <footer>
     </footer>
     <?= $this->fetch('script') ?>

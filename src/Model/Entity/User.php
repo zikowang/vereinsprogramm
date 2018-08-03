@@ -58,4 +58,10 @@ class User extends Entity
     protected $_hidden = [
         'password'
     ];
+
+    protected function _getFullname()
+    {
+        return $this->_properties['firstname'] . '  ' .
+            $this->_properties['surname'];
+    }
 }
