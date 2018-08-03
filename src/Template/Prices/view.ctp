@@ -27,13 +27,13 @@
                 <li class="list-group-item">
                     <div class="bmd-list-group-col">
                         <p class="list-group-item-heading"><?= __('Created') ?></p>
-                        <p class="list-group-item-text"><?= h($price->created) ?></p>
+                        <p class="list-group-item-text"><?= h($price->created->i18nFormat('dd.MM.yyyy')) ?></p>
                     </div>
                 </li>
                 <li class="list-group-item">
                     <div class="bmd-list-group-col">
                         <p class="list-group-item-heading"><?= __('Mdified') ?></p>
-                        <p class="list-group-item-text"><?= h($price->modified) ?></p>
+                        <p class="list-group-item-text"><?= h($price->modified->i18nFormat('dd.MM.yyyy')) ?></p>
                     </div>
                 </li>
             </ul>
@@ -58,8 +58,8 @@
                     <td><?= h($departments->id) ?></td>
                     <td><?= h($departments->name) ?></td>
                     <td><?= h($departments->description) ?></td>
-                    <td><?= h($departments->created) ?></td>
-                    <td><?= h($departments->modified) ?></td>
+                    <td><?= h($departments->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                    <td><?= h($departments->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                     <td class="actions">
                         <div class="btn-group btn-inline">
                             <?= $this->Html->link(__('View'), ['controller' => 'Departments', 'action' => 'view', $departments->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>

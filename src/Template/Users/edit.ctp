@@ -1,6 +1,9 @@
 <div class="jumbotron jumbotron-fluid bg-primary text-light">
     <div class="container-fluid">
         <h1><?= __('Edit User') ?></h1>
+        <div class="btn-group">
+            <?= $this->Html->link(__('Back'), ['action' => 'index'], ['class' => 'btn btn-sm btn-raised btn-warning']) ?>
+        </div>
     </div>
 </div>
 <div class="container-fluid">
@@ -52,35 +55,27 @@
                 ]); ?>
             </div>
         </div>
+
         <div class="col-12 col-md-6">
             <div class="form-group">
-                <?= $this->Form->control('addresses._ids', [
-                    'type' => 'select',
-                    'options' => @$addresses,
-                    'class' => 'form-control',
-                    'label' => [
-                        'class' => 'bmd-label-floating'
-                    ]
+            <label class="bmd-label-floating"><?= __('Addresses') ?></label>
+                <?= $this->Form->select('addresses._ids', $addresses, [
+                    'multiple' => true,
+                    'class' => 'form-control'
                 ]); ?>
             </div>
             <div class="form-group">
-                <?= $this->Form->control('departments._ids', [
-                    'type' => 'select',
-                    'options' => @$departments,
-                    'class' => 'form-control',
-                    'label' => [
-                        'class' => 'bmd-label-floating'
-                    ]
+            <label class="bmd-label-floating"><?= __('Departments') ?></label>
+                <?= $this->Form->select('departments._ids', $departments, [
+                    'multiple' => true,
+                    'class' => 'form-control'
                 ]); ?>
             </div>
             <div class="form-group">
-                <?= $this->Form->control('roles._ids', [
-                    'type' => 'select',
-                    'options' => @$roles,
-                    'class' => 'form-control',
-                    'label' => [
-                        'class' => 'bmd-label-floating'
-                    ]
+            <label class="bmd-label-floating"><?= __('Roles') ?></label>
+                <?= $this->Form->select('roles._ids', $roles, [
+                    'multiple' => true,
+                    'class' => 'form-control'
                 ]); ?>
             </div>
         </div>

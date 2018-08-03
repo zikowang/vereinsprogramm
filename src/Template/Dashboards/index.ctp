@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">Hier verwalten Sie Ihre Mitglieder.</p>
-                    <a href="/users/index" class="btn btn-warning">Mitgliederverwaltung</a>
+                    <a href="/users/index" class="btn btn-warning">Jetzt Verwalten</a>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">Hier verwalten Sie Ihre Abteilungen.</p>
-                    <a href="/departments/index" class="btn btn-secondary">Abteilungsverwaltung</a>
+                    <a href="/departments/index" class="btn btn-secondary">Jetzt Verwalten</a>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">Hier verwalten Sie Ihre Beiträge.</p>
-                    <a href="/prices/index" class="btn btn-primary">Beitragsverwaltung</a>
+                    <a href="/prices/index" class="btn btn-primary">Jetzt Verwalten</a>
                 </div>
             </div>
         </div>

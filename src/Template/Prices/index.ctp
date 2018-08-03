@@ -26,8 +26,8 @@
                         <th scope="row"><?= $this->Number->format($price->id) ?></th>
                         <td><?= h($price->name) ?></td>
                         <td><?= h($price->price) ?></td>
-                        <td><?= h($price->created) ?></td>
-                        <td><?= h($price->modified) ?></td>
+                        <td><?= h($price->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                        <td><?= h($price->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['action' => 'view', $price->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $price->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>

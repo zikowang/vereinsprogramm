@@ -1,6 +1,9 @@
 <div class="jumbotron jumbotron-fluid bg-primary text-light">
     <div class="container-fluid">
         <h1><?= __('Add User') ?></h1>
+        <div class="btn-group">
+            <?= $this->Html->link(__('Back'), ['action' => 'index'], ['class' => 'btn btn-sm btn-raised btn-warning']) ?>
+        </div>
     </div>
 </div>
 
@@ -65,11 +68,9 @@
                 ]); ?>
             </div>
             <div class="form-group">
-                <?= $this->Form->control('departments._ids', [
-                    'type' => 'select',
-                    'options' => $departments,
+                <?= $this->Form->select('departments._ids', $departments, [
+                    'multiple' => true,
                     'class' => 'form-control',
-                    'empty' => __('Please Select'),
                     'label' => [
                         'class' => 'bmd-label-floating'
                     ]

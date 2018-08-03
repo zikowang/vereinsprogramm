@@ -26,12 +26,14 @@
                         <th scope="row"><?= $this->Number->format($department->id) ?></th>
                         <td><?= h($department->name) ?></td>
                         <td><?= h($department->description) ?></td>
-                        <td><?= h($department->created) ?></td>
-                        <td><?= h($department->modified) ?></td>
+                        <td><?= h($department->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                        <td><?= h($department->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                         <td class="actions">
-                            <?= $this->Html->link(__('View'), ['action' => 'view', $department->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
-                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $department->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
-                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $department->id], ['confirm' => __('Are you sure you want to delete # {0}?', $department->id), 'class' => 'btn btn-raised btn-sm btn-danger']) ?>
+                            <div class="btn-group">
+                                <?= $this->Html->link(__('View'), ['action' => 'view', $department->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
+                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $department->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $department->id], ['confirm' => __('Are you sure you want to delete # {0}?', $department->id), 'class' => 'btn btn-raised btn-sm btn-danger']) ?>
+                            </div>
                         </td>
                     </tr>
                     <?php endforeach; ?>

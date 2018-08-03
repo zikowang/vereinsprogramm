@@ -1,6 +1,9 @@
 <div class="jumbotron jumbotron-fluid bg-primary text-light">
     <div class="container-fluid">
         <h1><?= __('Edit Department') ?></h1>
+        <div class="btn-group">
+            <?= $this->Html->link(__('Back'), ['action' => 'index'], ['class' => 'btn btn-sm btn-raised btn-warning']) ?>
+        </div>
     </div>
 </div>
 

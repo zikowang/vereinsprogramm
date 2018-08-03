@@ -31,11 +31,13 @@
                         <td><?= h($user->firstname) ?></td>
                         <td><?= h($user->surname) ?></td>
                         <td><?= h($user->email) ?></td>
-                        <td><?= h($user->created) ?></td>
+                        <td><?= h($user->created->i18nFormat('dd.MM.yyyy')) ?></td>
                         <td class="actions">
-                            <?= $this->Html->link(__('View'), ['action' => 'view', $user->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
-                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
-                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'btn btn-raised btn-sm btn-danger']) ?>
+                            <div class="btn-group">
+                                <?= $this->Html->link(__('View'), ['action' => 'view', $user->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
+                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class' => 'btn btn-raised btn-sm btn-primary']) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'btn btn-raised btn-sm btn-danger']) ?>
+                            </div>
                         </td>
                     </tr>
                     <?php endforeach; ?>

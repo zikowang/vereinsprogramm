@@ -1,6 +1,10 @@
 <div class="jumbotron jumbotron-fluid bg-primary text-light">
     <div class="container-fluid">
         <h1><?= __('Department') ?></h1>
+        <div class="btn-group">
+            <?= $this->Html->link(__('Back'), ['action' => 'index'], ['class' => 'btn btn-sm btn-raised btn-warning']) ?>
+            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $department->id], ['class' => 'btn btn-sm btn-raised btn-info']) ?>
+        </div>
     </div>
 </div>
 <div class="container-fluid">
@@ -27,13 +31,13 @@
                 <li class="list-group-item">
                     <div class="bmd-list-group-col">
                         <p class="list-group-item-heading"><?= __('Created') ?></p>
-                        <p class="list-group-item-text"><?= h($department->created) ?></p>
+                        <p class="list-group-item-text"><?= h($department->created->i18nFormat('dd.MM.yyyy')) ?></p>
                     </div>
                 </li>
                 <li class="list-group-item">
                     <div class="bmd-list-group-col">
                         <p class="list-group-item-heading"><?= __('Mdified') ?></p>
-                        <p class="list-group-item-text"><?= h($department->modified) ?></p>
+                        <p class="list-group-item-text"><?= h($department->modified->i18nFormat('dd.MM.yyyy')) ?></p>
                     </div>
                 </li>
             </ul>
@@ -58,8 +62,8 @@
                     <td><?= h($prices->id) ?></td>
                     <td><?= h($prices->name) ?></td>
                     <td><?= h($prices->price) ?></td>
-                    <td><?= h($prices->created) ?></td>
-                    <td><?= h($prices->modified) ?></td>
+                    <td><?= h($prices->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                    <td><?= h($prices->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                     <td class="actions">
                         <div class="btn-group btn-inline">
                             <?= $this->Html->link(__('View'), ['controller' => 'Prices', 'action' => 'view', $prices->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
@@ -95,8 +99,8 @@
                     <td><?= h($users->firstname) ?></td>
                     <td><?= h($users->surname) ?></td>
                     <td><?= h($users->email) ?></td>
-                    <td><?= h($users->created) ?></td>
-                    <td><?= h($users->modified) ?></td>
+                    <td><?= h($users->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                    <td><?= h($users->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                     <td class="actions">
                         <div class="btn-group btn-inline">
                             <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>

@@ -1,6 +1,10 @@
 <div class="jumbotron jumbotron-fluid bg-primary text-light">
     <div class="container-fluid">
         <h1><?= __('User') ?></h1>
+        <div class="btn-group">
+            <?= $this->Html->link(__('Back'), ['action' => 'index'], ['class' => 'btn btn-sm btn-raised btn-warning']) ?>
+            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class' => 'btn btn-sm btn-raised btn-info']) ?>
+        </div>
     </div>
 </div>
 <div class="container-fluid">
@@ -45,13 +49,13 @@
                 <li class="list-group-item">
                     <div class="bmd-list-group-col">
                         <p class="list-group-item-heading"><?= __('Created') ?></p>
-                        <p class="list-group-item-text"><?= h($user->created) ?></p>
+                        <p class="list-group-item-text"><?= h($user->created->i18nFormat('dd.MM.yyyy')) ?></p>
                     </div>
                 </li>
                 <li class="list-group-item">
                     <div class="bmd-list-group-col">
                         <p class="list-group-item-heading"><?= __('Mdified') ?></p>
-                        <p class="list-group-item-text"><?= h($user->modified) ?></p>
+                        <p class="list-group-item-text"><?= h($user->modified->i18nFormat('dd.MM.yyyy')) ?></p>
                     </div>
                 </li>
             </ul>
@@ -84,8 +88,8 @@
                     <td><?= h($addresses->zipcode) ?></td>
                     <td><?= h($addresses->city) ?></td>
                     <td><?= h($addresses->country_id) ?></td>
-                    <td><?= h($addresses->created) ?></td>
-                    <td><?= h($addresses->modified) ?></td>
+                    <td><?= h($addresses->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                    <td><?= h($addresses->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                     <td class="actions">
                         <div class="btn-group btn-inline">
                             <?= $this->Html->link(__('View'), ['controller' => 'Addresses', 'action' => 'view', $addresses->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
@@ -115,8 +119,8 @@
                     <td><?= h($departments->id) ?></td>
                     <td><?= h($departments->name) ?></td>
                     <td><?= h($departments->description) ?></td>
-                    <td><?= h($departments->created) ?></td>
-                    <td><?= h($departments->modified) ?></td>
+                    <td><?= h($departments->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                    <td><?= h($departments->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                     <td class="actions">
                         <div class="btn-group btn-inline">
                             <?= $this->Html->link(__('View'), ['controller' => 'Departments', 'action' => 'view', $departments->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
@@ -144,8 +148,8 @@
                 <tr>
                     <td><?= h($roles->id) ?></td>
                     <td><?= h($roles->name) ?></td>
-                    <td><?= h($roles->created) ?></td>
-                    <td><?= h($roles->modified) ?></td>
+                    <td><?= h($roles->created->i18nFormat('dd.MM.yyyy')) ?></td>
+                    <td><?= h($roles->modified->i18nFormat('dd.MM.yyyy')) ?></td>
                     <td class="actions">
                         <div class="btn-group btn-inline">
                             <?= $this->Html->link(__('View'), ['controller' => 'Roles', 'action' => 'view', $roles->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
