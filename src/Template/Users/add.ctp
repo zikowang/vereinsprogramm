@@ -7,31 +7,82 @@
     <div class="col-12 col-md-6">
     <?= $this->Form->create($user) ?>
         <div class="form-group">
-        <?= $this->Form->control('state_id', ['options' => $states, 'class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+        <?= $this->Form->control('state_id', [
+            'options' => $states,
+            'class' => 'form-control',
+            'empty' => __('Please Select'),
+            'label' => [
+                'class' => 'bmd-label-floating'
+            ]
+        ]); ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->control('group_id', ['options' => $groups, 'class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+            <?= $this->Form->control('group_id', [
+                'options' => $groups,
+                'class' => 'form-control',
+                'empty' => __('Please Select'),
+                'label' => [
+                    'class' => 'bmd-label-floating'
+                ]
+            ]); ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->control('firstname', ['class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+            <?= $this->Form->control('firstname', [
+                'class' => 'form-control',
+                'label' => [
+                    'class' => 'bmd-label-floating'
+                ]
+            ]); ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->control('surname', ['class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+            <?= $this->Form->control('surname', [
+                'class' => 'form-control',
+                'label' => [
+                    'class' => 'bmd-label-floating'
+                ]
+            ]); ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->control('email', ['class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+            <?= $this->Form->control('email', [
+                'class' => 'form-control',
+                'default' => null,
+                'label' => [
+                    'class' => 'bmd-label-floating'
+                ]
+            ]); ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->control('password', ['class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+            <?= $this->Form->control('addresses._ids', [
+                'type' => 'select',
+                'options' => $addresses,
+                'class' => 'form-control',
+                'empty' => __('Please Select'),
+                'label' => [
+                    'class' => 'bmd-label-floating'
+                ]
+            ]); ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->control('addresses._ids', ['options' => $addresses, 'class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+            <?= $this->Form->control('departments._ids', [
+                'type' => 'select',
+                'options' => $departments,
+                'class' => 'form-control',
+                'empty' => __('Please Select'),
+                'label' => [
+                    'class' => 'bmd-label-floating'
+                ]
+            ]); ?>
         </div>
         <div class="form-group">
-            <?= $this->Form->control('departments._ids', ['options' => $departments, 'class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
-        </div>
-        <div class="form-group">
-            <?= $this->Form->control('roles._ids', ['options' => $roles, 'class' => 'form-control', 'label' => ['class' => 'bmd-label-floating']]); ?>
+            <?= $this->Form->control('roles._ids', [
+                'type' => 'select',
+                'options' => $roles,
+                'class' => 'form-control',
+                'empty' => __('Please Select'),
+                'label' => [
+                    'class' => 'bmd-label-floating'
+                ]
+            ]); ?>
         </div>
     </div>
 </div>

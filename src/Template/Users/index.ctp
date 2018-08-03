@@ -1,6 +1,9 @@
 <div class="jumbotron jumbotron-fluid bg-light">
     <div class="container-fluid">
         <h1><?= __('Users') ?></h1>
+        <div class="btn-group">
+            <a href="/users/add" class="btn btn-outline-primary"><?= __('Add') ?></a>
+        </div>
     </div>
 </div>
 <div class="row">

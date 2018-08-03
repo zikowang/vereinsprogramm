@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid bg-light">
     <div class="container-fluid">
-        <h1><?= __('View User') ?></h1>
+        <h1><?= __('User') ?></h1>
     </div>
 </div>
 <div class="row">
@@ -56,11 +56,12 @@
         </ul>
     </div>
 </div>
-<div class="users view large-9 medium-8 columns content">
-    <div class="related">
+
+<div class="row">
+    <div class="col-12 related">
         <h4><?= __('Related Addresses') ?></h4>
         <?php if (!empty($user->addresses)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Optname') ?></th>
@@ -85,19 +86,21 @@
                 <td><?= h($addresses->created) ?></td>
                 <td><?= h($addresses->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Addresses', 'action' => 'view', $addresses->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Addresses', 'action' => 'edit', $addresses->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Addresses', 'action' => 'delete', $addresses->id], ['confirm' => __('Are you sure you want to delete # {0}?', $addresses->id)]) ?>
+                    <div class="btn-group btn-inline">
+                        <?= $this->Html->link(__('View'), ['controller' => 'Addresses', 'action' => 'view', $addresses->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
+                        <?= $this->Html->link(__('Edit'), ['controller' => 'Addresses', 'action' => 'edit', $addresses->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Addresses', 'action' => 'delete', $addresses->id], ['confirm' => __('Are you sure you want to delete # {0}?', $addresses->id), 'class' => 'btn btn-sm btn-raised btn-danger']) ?>
+                    </div>
                 </td>
             </tr>
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
     </div>
-    <div class="related">
+    <div class="col-12 related">
         <h4><?= __('Related Departments') ?></h4>
         <?php if (!empty($user->departments)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
@@ -114,16 +117,18 @@
                 <td><?= h($departments->created) ?></td>
                 <td><?= h($departments->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Departments', 'action' => 'view', $departments->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Departments', 'action' => 'edit', $departments->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Departments', 'action' => 'delete', $departments->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departments->id)]) ?>
+                    <div class="btn-group btn-inline">
+                        <?= $this->Html->link(__('View'), ['controller' => 'Departments', 'action' => 'view', $departments->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
+                        <?= $this->Html->link(__('Edit'), ['controller' => 'Departments', 'action' => 'edit', $departments->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Departments', 'action' => 'delete', $departments->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departments->id), 'class' => 'btn btn-sm btn-raised btn-danger']) ?>
+                    </div>
                 </td>
             </tr>
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
     </div>
-    <div class="related">
+    <div class="col-12 related">
         <h4><?= __('Related Roles') ?></h4>
         <?php if (!empty($user->roles)): ?>
         <table cellpadding="0" cellspacing="0">
@@ -141,9 +146,11 @@
                 <td><?= h($roles->created) ?></td>
                 <td><?= h($roles->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Roles', 'action' => 'view', $roles->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Roles', 'action' => 'edit', $roles->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Roles', 'action' => 'delete', $roles->id], ['confirm' => __('Are you sure you want to delete # {0}?', $roles->id)]) ?>
+                    <div class="btn-group btn-inline">
+                        <?= $this->Html->link(__('View'), ['controller' => 'Roles', 'action' => 'view', $roles->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
+                        <?= $this->Html->link(__('Edit'), ['controller' => 'Roles', 'action' => 'edit', $roles->id], ['class' => 'btn btn-sm btn-raised btn-primary']) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Roles', 'action' => 'delete', $roles->id], ['confirm' => __('Are you sure you want to delete # {0}?', $roles->id), 'class' => 'btn btn-sm btn-raised btn-danger']) ?>
+                    </div>
                 </td>
             </tr>
             <?php endforeach; ?>

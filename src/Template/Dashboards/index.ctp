@@ -1,6 +1,6 @@
-<div class="row">
-    <div class="col">
-        <h1>Mein Dashboard</h1>
+<div class="jumbotron jumbotron-fluid bg-light">
+    <div class="container-fluid">
+        <h1><?= __('My Dashboard') ?></h1>
     </div>
 </div>
 <div class="row">
