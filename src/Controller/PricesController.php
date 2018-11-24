@@ -12,7 +12,11 @@ use App\Controller\AppController;
  */
 class PricesController extends AppController
 {
-
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
+    }
     /**
      * Index method
      *
@@ -22,7 +26,10 @@ class PricesController extends AppController
     {
         $prices = $this->paginate($this->Prices);
 
-        $this->set(compact('prices'));
+        $this->set([
+            'prices' => $prices,
+            '_serialize' => ['prices']
+        ]);
     }
 
     /**
@@ -38,7 +45,10 @@ class PricesController extends AppController
             'contain' => ['Departments']
         ]);
 
-        $this->set('price', $price);
+        $this->set([
+            'price' => $price,
+            '_serialize' => ['price']
+        ]);
     }
 
     /**

@@ -4,17 +4,13 @@
  * @var \App\Model\Entity\Price[]|\Cake\Collection\CollectionInterface $prices
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Price'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Departments'), ['controller' => 'Departments', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Department'), ['controller' => 'Departments', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<div class="row">
+    <div class="col">
+        <h1>Prices</h1>
+    </div>
+</div>
 <div class="prices index large-9 medium-8 columns content">
-    <h3><?= __('Prices') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
