@@ -35,7 +35,10 @@ class DepartmentsController extends AppController
     public function view($id = null)
     {
         $department = $this->Departments->get($id, [
-            'contain' => ['Prices', 'Users']
+            'contain' => [
+                'Prices',
+                'Users'
+            ]
         ]);
 
         $this->set('department', $department);
@@ -56,7 +59,7 @@ class DepartmentsController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The department could not be saved. Please, try again.'));
+            $this->Flash->success(__('The department could not be saved. Please, try again.'));
         }
         $prices = $this->Departments->Prices->find('list', ['limit' => 200]);
         $users = $this->Departments->Users->find('list', ['limit' => 200]);
@@ -73,16 +76,21 @@ class DepartmentsController extends AppController
     public function edit($id = null)
     {
         $department = $this->Departments->get($id, [
-            'contain' => ['Prices', 'Users']
+            'contain' => [
+                'Prices',
+                'Users'
+            ]
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $department = $this->Departments->patchEntity($department, $this->request->getData());
+
             if ($this->Departments->save($department)) {
                 $this->Flash->success(__('The department has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The department could not be saved. Please, try again.'));
+            $this->Flash->success(__('The department could not be saved. Please, try again.'));
         }
         $prices = $this->Departments->Prices->find('list', ['limit' => 200]);
         $users = $this->Departments->Users->find('list', ['limit' => 200]);

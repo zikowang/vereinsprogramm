@@ -1,36 +1,62 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Department $department
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $department->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $department->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Departments'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Prices'), ['controller' => 'Prices', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Price'), ['controller' => 'Prices', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="departments form large-9 medium-8 columns content">
-    <?= $this->Form->create($department) ?>
-    <fieldset>
-        <legend><?= __('Edit Department') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('description');
-            echo $this->Form->control('prices._ids', ['options' => $prices]);
-            echo $this->Form->control('users._ids', ['options' => $users]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<div class="jumbotron jumbotron-fluid bg-primary text-light">
+    <div class="container-fluid">
+        <h1><?= __('Edit Department') ?></h1>
+        <div class="btn-group">
+            <?= $this->Html->link(__('Back'), ['action' => 'index'], ['class' => 'btn btn-sm btn-raised btn-warning']) ?>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <?= $this->Form->create($department) ?>
+            <div class="form-group">
+                <?= $this->Form->control('name', [
+                    'class' => 'form-control',
+                    'label' => [
+                        'class' => 'bmd-label-floating'
+                    ]
+                    , 'div' => false]); ?>
+            </div>
+            <div class="form-group">
+                <?= $this->Form->control('description', [
+                    'class' => 'form-control',
+                    'label' => [
+                        'class' => 'bmd-label-floating'
+                    ]
+                ]); ?>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-group">
+                <?= $this->Form->select('prices._ids', @$prices, [
+                    'multiple' => true,
+                    'options' => @$prices,
+                    'class' => 'form-control',
+                    'label' => [
+                        'class' => 'bmd-label-floating'
+                    ]
+                ]); ?>
+            </div>
+            <div class="form-group">
+                <?= $this->Form->select('users._ids', @$users, [
+                    'multiple' => true,
+                    'options' => @$users,
+                    'class' => 'form-control',
+                    'label' => [
+                        'class' => 'bmd-label-floating'
+                    ]
+                ]); ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6">
+            <?= $this->Html->link(__('Cancel'), ['action' => 'index'], ['class' => 'btn']) ?>
+            <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-raised btn-primary float-right']) ?>
+            <?= $this->Form->end() ?>
+        </div>
+    </div>
 </div>

@@ -1,33 +1,41 @@
-<div class="row">
-    <div class="col">
-        <h1>Mein Dashboard</h1>
+<div class="jumbotron jumbotron-fluid container-full-bg bg-primary text-light">
+    <div class="container-fluid">
+        <h1><?= __('My Dashboard') ?></h1>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-4 py-2">
-        <div class="card h-100 text-white bg-secondary">
-            <div class="card-body">
-                <h3 class="card-title">Mitglieder</h3>
-                <p class="card-text">Hier verwalten Sie Ihre Mitglieder.</p>
-                <a href="/users/index" class="btn btn-outline-light">Mitgliederverwaltung</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 ">
+            <div class="card text-center bg-light">
+                <div class="card-header">
+                    <h4 class="card-title">Mitglieder</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Hier verwalten Sie Ihre Mitglieder.</p>
+                    <a href="/users/index" class="btn btn-warning">Jetzt Verwalten</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-4 py-2">
-        <div class="card h-100 border-primary">
-            <div class="card-body">
-                <h3 class="card-title">Abteilungen</h3>
-                <p class="card-text">Hier verwalten Sie Ihre Abteilungen.</p>
-                <a href="/departments/index" class="btn btn-outline-secondary">Abteilungsverwaltung</a>
+        <div class="col-sm-6 col-md-4 ">
+            <div class="card text-center bg-light">
+                <div class="card-header">
+                    <h4 class="card-title">Abteilungen</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Hier verwalten Sie Ihre Abteilungen.</p>
+                    <a href="/departments/index" class="btn btn-secondary">Jetzt Verwalten</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-4 py-2">
-        <div class="card text-white bg-primary">
-            <div class="card-body">
-                <h3 class="card-title">Beiträge</h3>
-                <p class="card-text">Hier verwalten Sie Ihre Beiträge.</p>
-                <a href="/prices/index" class="btn btn-outline-light">Beitragsverwaltung</a>
+        <div class="col-sm-6 col-md-4 ">
+            <div class="card text-center bg-light">
+                <div class="card-header">
+                    <h4 class="card-title">Beiträge</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Hier verwalten Sie Ihre Beiträge.</p>
+                    <a href="/prices/index" class="btn btn-primary">Jetzt Verwalten</a>
+                </div>
             </div>
         </div>
     </div>
